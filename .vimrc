@@ -336,13 +336,13 @@ set cindent
 
 " Tab键的宽度
 
-set tabstop=4
+set tabstop=8
 
-" 统一缩进为4
+" 统一缩进为8
 
-set softtabstop=4
+set softtabstop=8
 
-set shiftwidth=4
+set shiftwidth=8
 
 " 不要用空格代替制表符
 
