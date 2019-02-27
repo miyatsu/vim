@@ -104,9 +104,9 @@ func SetTitle()
 
         call append(line("."), "\# File Name: ".expand("%")) 
 
-        call append(line(".")+1, "\# Author: ma6174") 
+        call append(line(".")+1, "\# Author: Ding Tao")
 
-        call append(line(".")+2, "\# mail: ma6174@163.com") 
+        call append(line(".")+2, "\# mail: i@dingtao.org")
 
         call append(line(".")+3, "\# Created Time: ".strftime("%c")) 
 
@@ -122,9 +122,9 @@ func SetTitle()
 
         call append(line("."), "    > File Name: ".expand("%")) 
 
-        call append(line(".")+1, "    > Author: ma6174") 
+        call append(line(".")+1, "    > Author: Ding Tao")
 
-        call append(line(".")+2, "    > Mail: ma6174@163.com ") 
+        call append(line(".")+2, "    > Mail: i@dingtao.org")
 
         call append(line(".")+3, "    > Created Time: ".strftime("%c")) 
 
