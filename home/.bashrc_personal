@@ -1,0 +1,11 @@
+# SPDX-License-Identifier: GPL-3.0
+#
+# Copyright (C) 2019 Ding Tao <i@dingtao.org>
+
+# Personal Bashrc sourced by .bashrc
+
+# Force xterm use 256 color
+if [ $TERM == "xterm" ]; then
+	export TERM=xterm-256color
+fi
+
