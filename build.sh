@@ -31,7 +31,7 @@ rm /usr/bin/sh
 ln -s /bin/bash /usr/bin/sh
 
 # Add user
-adduser --quit dingtao
+adduser --quiet dingtao
 
 # Remove password
 passwd -d root
