@@ -30,7 +30,7 @@ rm /usr/bin/sh
 ln -s /bin/bash /usr/bin/sh
 
 # Add user
-useradd dingtao
+adduser --quit dingtao
 
 # Remove password
 passwd -d root
