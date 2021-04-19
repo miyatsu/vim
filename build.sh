@@ -3,6 +3,7 @@
 # Update & Upgrade
 apt update
 apt upgrade -y
+yes | unminimize
 
 # Special package
 DEBIAN_FRONTEND=noninteractive
