@@ -4,6 +4,12 @@
 apt update
 apt upgrade -y
 
+# Special package
+DEBIAN_FRONTEND=noninteractive
+TZ=Asia/Shanghai
+
+apt install -y	tzdata
+
 # Tools
 apt install -y		\
 	bash		\
@@ -12,6 +18,7 @@ apt install -y		\
 	man		\
 	net-tools	\
 	vim		\
+	tmux		\
 	exuberant-ctags	\
 	openssh-server	\
 	gcc		\
