@@ -22,8 +22,11 @@ set number
 
 " High light current line
 set cursorline
-" set cursorcolumn
 
+" Put vertical line at 80 and 120
+set colorcolumn=80,120
+
+" set cursorcolumn
 set ruler
 
 " High light matched braces
