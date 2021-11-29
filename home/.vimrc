@@ -37,6 +37,10 @@ set mouse=a
 
 set path+=**
 
+"""" Skin
+
+colorscheme desert
+
 
 """" Code Related
 
