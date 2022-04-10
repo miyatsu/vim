@@ -26,8 +26,11 @@ set cursorline
 " Put vertical line at 80 and 120
 set colorcolumn=80,120
 
-" set cursorcolumn
+" Set cursorcolumn
 set ruler
+
+" Keep 2 lines on top/bottom before scroll page
+set scrolloff=2
 
 " High light matched braces
 set showmatch
