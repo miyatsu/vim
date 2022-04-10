@@ -40,6 +40,7 @@ passwd -d dingtao
 # Personal config
 su dingtao
 
+git config --global core.editor "vim"
 git config --global user.email "i@dingtao.org"
 git config --global user.name "Ding Tao"
 
