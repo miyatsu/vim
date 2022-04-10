@@ -1,0 +1,213 @@
+" Show line number
+set number
+
+set colorcolumn=80,120
+
+set ruler
+
+set cursorline
+
+" Auto complete vim command with TAB
+set wildmenu
+set mouse=a
+
+set t_Co=256
+
+colorscheme desert
+
+syntax enable
+
+set showcmd         " 输入的命令显示出来，看的清楚些  
+
+set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}   "状态行显示的内容  
+
+set laststatus=2    " 启动显示状态行(1),总是显示状态行(2)  
+
+set cmdheight=2
+
+set foldenable      " 允许折叠  
+
+set foldcolumn=0
+
+set foldmethod=indent 
+
+set foldlevel=3 
+
+filetype on
+
+" 载入文件类型插件
+
+filetype plugin on
+
+" 为特定文件类型载入相关缩进文件
+
+filetype indent on
+
+filetype plugin indent on 
+
+set fileencodings=utf-8,gb2312
+set encoding=utf-8
+
+
+set autoindent
+
+set cindent
+
+" Tab键的宽度
+
+set tabstop=4
+
+" 统一缩进为4
+
+set softtabstop=4
+
+set shiftwidth=4
+
+" 不要用空格代替制表符
+
+" set noexpandtab
+
+" Use Space rather than TAB
+set expandtab
+
+" 在行和段开始处使用制表符
+
+set smarttab
+
+
+set history=1000
+
+"搜索忽略大小写
+
+"set ignorecase
+
+"搜索逐字符高亮
+
+set hlsearch
+
+set incsearch
+
+" 高亮显示匹配的括号
+
+set showmatch
+
+" 匹配括号高亮的时间（单位是十分之一秒）
+
+set matchtime=1
+
+" 光标移动到buffer的顶部和底部时保持3行距离
+
+set scrolloff=3
+
+" 为C程序提供自动缩进
+
+set smartindent
+
+"自动补全
+
+:inoremap ( ()<ESC>i
+
+:inoremap ) <c-r>=ClosePair(')')<CR>
+
+:inoremap { {<CR>}<ESC>O
+
+:inoremap } <c-r>=ClosePair('}')<CR>
+
+:inoremap [ []<ESC>i
+
+:inoremap ] <c-r>=ClosePair(']')<CR>
+
+:inoremap " ""<ESC>i
+
+:inoremap ' ''<ESC>i
+
+function! ClosePair(char)
+
+    if getline('.')[col('.') - 1] == a:char
+
+        return "\<Right>"
+
+    else
+
+        return a:char
+
+    endif
+
+endfunction
+
+set tags=tags;,tags  
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'edkolev/tmuxline.vim'
+
+Plug 'preservim/tagbar'
+Plug 'preservim/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'miyatsu/vim-gtags-cscope'
+"Plug '~/.vim/local/DrawIt-master'
+"Plug '~/.vim/local/ale-3.0.0'
+
+call plug#end()
+
+"""" Plug configuration gose here
+
+"" Air Line
+
+" Enable enhanced tabline
+let g:airline#extensions#tabline#enable = 1
+
+" Tab number show as tab numbers
+let g:airline#extensions#tabline#tab_nr_type = 1
+
+" Show buffer index
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+
+"" Air Line Themes
+let g:airline_theme = 'badwolf'
+
+"" Tagbar
+
+" Set width with 30, default 40
+let g:tagbar_width = 30
+
+" Automatic open tagbar for every buffer
+autocmd BufEnter * nested :call tagbar#autoopen(0)
+
+"" Gtags-Cscope
+
+"" NERDTree
+
+" Set window size, default 31
+let g:NERDTreeWinSize = 28
+
+" Open file in new tab rather than buffer
+let g:NERDTreeCustomOpenArgs = {'file':{'where': 't'}, 'dir': {}}
+
+"" NERDTree TAB
+
+" Open NERDTree Tab automaticly
+let g:nerdtree_tabs_open_on_console_startup = 1
+
+"" CSCOPE
+
+" To use the default key/mouse mapping:
+let GtagsCscope_Auto_Map = 1
+" To ignore letter case when searching:
+let GtagsCscope_Ignore_Case = 1
+" To use absolute path name:
+let GtagsCscope_Absolute_Path = 1
+" To deterring interruption:
+let GtagsCscope_Keep_Alive = 1
+" If you hope auto loading:
+let GtagsCscope_Auto_Load = 1
+" To use 'vim -t ', ':tag' and '<C-]>'
+set cscopetag
+
+"" ALE
+
+" Use GNU C89 standard
+let g:ale_c_cc_options = '-std=gnu89 -Wall'
+
