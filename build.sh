@@ -5,26 +5,78 @@ apt update
 apt upgrade -y
 yes | unminimize
 
-# Special package
+###############################################################################
+###### Special package
+
+### tzdata
+#
+# Note: tzdata installation requires command line interactive, handle it here
+#
 DEBIAN_FRONTEND=noninteractive
 TZ=Asia/Shanghai
 
 apt install -y	tzdata
 
-# Tools
+###############################################################################
+###### Global base tools
+
+### shell and mutiplexing
 apt install -y		\
 	bash		\
 	bash-completion	\
-	iproute2	\
-	man		\
+	tmux
+### net related
+apt install -y		\
 	net-tools	\
+	iproute2
+
+### editor
+apt install -y		\
 	vim		\
-	tmux		\
 	exuberant-ctags	\
-	openssh-server	\
+	global
+
+### remote ssh
+apt install -y		\
+	openssh-server
+
+### helper
+apt install -y		\
+	man
+
+###############################################################################
+###### Dev related
+
+### base tools
+apt install -y		\
 	gcc		\
 	make		\
-	git
+	git		\
+	python3
+
+### cross base tools
+apt install -y		\
+	gcc-aarch64-linux-gnu
+
+###############################################################################
+### Package dev tools
+
+### linux
+apt install -y		\
+	flex		\
+	bison
+
+### edk2
+apt install -y		\
+	uuid-dev
+
+### optee_os
+apt install -y			\
+	python3-pyelftools	\
+	python3-pycryptodome
+
+###############################################################################
+###### Other stuff
 
 # Change to bash
 rm /usr/bin/sh
@@ -41,6 +93,6 @@ passwd -d dingtao
 su dingtao
 
 git config --global core.editor "vim"
-git config --global user.email "i@dingtao.org"
+git config --global user.email "miyatsu@qq.com"
 git config --global user.name "Ding Tao"
 
