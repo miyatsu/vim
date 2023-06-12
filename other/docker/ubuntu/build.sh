@@ -65,6 +65,12 @@ apt install -y		\
 apt install -y		\
 	flex		\
 	bison
+	
+### u-boot
+apt install -y		\
+	swig		\
+	uuid-dev	\
+	libgnutls28-dev
 
 ### edk2
 apt install -y		\
