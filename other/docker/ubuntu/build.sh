@@ -81,6 +81,15 @@ apt install -y			\
 	python3-pyelftools	\
 	python3-pycryptodome
 
+ #### dpdk
+ apt install -y			\
+ 	pkgconf			\
+ 	build-essential		\
+  	meson			\
+   	ninja-build		\
+  	python3-pyelftools	\
+   	libnuma-dev
+
 ###############################################################################
 ###### Other stuff
 
