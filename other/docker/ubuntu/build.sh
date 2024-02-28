@@ -79,7 +79,8 @@ apt install -y		\
 ### optee_os
 apt install -y			\
 	python3-pyelftools	\
-	python3-pycryptodome
+	python3-pycryptodome	\
+	python3-cryptography
 
  #### dpdk
  apt install -y			\
